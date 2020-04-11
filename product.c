@@ -1,4 +1,5 @@
 #include "product.h"
+//Functions for CRUD
 int selectMenu(){
   int menu;
   printf("\n제품 CRUD\n");

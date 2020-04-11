@@ -42,6 +42,24 @@ int loadData (Product*s) {
         printf("Load Success\n");
         return count;
 }
+void searchByName (Product *s, int count) {
+        int scount =0;
+        char search[40];
+        printf("검색할 제품의 제품명은?");
+        scanf("\n %[^\n]s", search);
+
+        for (int i =0; i<count; i++){
+        if (s[i].price!=-1){
+                if(s[i].name == search){
+                printf("%s의 정보", s[i].name);
+                readProduct(s[i]);
+                printf("\n");
+                scount++;
+                }
+        }
+}
+        if (scount == 0) printf("=>검색된 데이터가 없음 \n");
+}
 void searchByPrice (Product *s, int count) {
         int scount =0;
         int search = 0;

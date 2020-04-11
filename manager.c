@@ -45,13 +45,13 @@ int loadData (Product*s) {
 void searchByName (Product *s, int count) {
         int scount =0;
         char search[40];
-        printf("검색할 제품의 제품명은?");
+        printf("검색할 제품의 제품명은? ");
         scanf("\n %[^\n]s", search);
-
+	getchar();
         for (int i =0; i<count; i++){
         if (s[i].price!=-1){
-                if(s[i].name == search){
-                printf("%s의 정보", s[i].name);
+                if(strstr(s[i].name,search)){
+                printf("\n %s의 정보", s[i].name);
                 readProduct(s[i]);
                 printf("\n");
                 scount++;
@@ -69,7 +69,7 @@ void searchByPrice (Product *s, int count) {
         for (int i =0; i<count; i++){
         if (s[i].price!=-1){
                 if(s[i].price == search){
-                printf("%s의 정보", s[i].name);
+                printf("\n%s의 정보", s[i].name);
                 readProduct(s[i]);
                 printf("\n");
                 scount++;
@@ -87,7 +87,7 @@ void searchByStar (Product *s, int count) {
         for (int i =0; i<count; i++){
         if (s[i].price!=-1){
                 if(s[i].star == search){
-                printf("%s의 정보\n", s[i].name);
+                printf("\n%s의 정보\n", s[i].name);
                 readProduct(s[i]);
 printf("\n");
                 scount++;

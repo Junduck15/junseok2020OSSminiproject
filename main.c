@@ -73,6 +73,28 @@ int main(){
                  else
            	 saveData(s,curcount);
 		}	
+	 else if (menu == 6) {
+                int searchType = 0;
+                printf("\n1. 제품명으로 검색\n");
+                printf("2. 제품 가격으로 검색\n");
+                printf("3. 제품 별개수로 검색\n");
+                printf("   번호를 고르시오(취소:0) ");
+                scanf("%d", &searchType);
+                if (searchType==0) {
+                printf("취소됨.\n");
+                continue;
+                }
+                if (searchType==1) {
+                searchByName(s, curcount);
+                }
+                if (searchType==2) {
+                searchByPrice(s, curcount);
+                }
+                if (searchType==3) {
+                searchByStar(s, curcount);
+                }
+		}
+
 
 	}
     printf("종료됨!\n");

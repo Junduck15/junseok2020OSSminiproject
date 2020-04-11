@@ -60,4 +60,23 @@ void searchByPrice (Product *s, int count) {
 }
         if (scount == 0) printf("=>검색된 데이터가 없음 \n");
 }
+void searchByStar (Product *s, int count) {
+        int scount =0;
+        int search = 0;
+        printf("검색할 메뉴의 별개수는?");
+        scanf("%d", &search);
+
+        for (int i =0; i<count; i++){
+        if (s[i].price!=-1){
+                if(s[i].star == search){
+                printf("%s의 정보\n", s[i].name);
+                readProduct(s[i]);
+printf("\n");
+                scount++;
+                }
+        }
+}
+        if (scount == 0) printf("=>검색된 데이터가 없음 \n");
+
+}
 

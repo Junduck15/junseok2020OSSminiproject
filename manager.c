@@ -24,6 +24,7 @@ void saveData (Product*s, int count) {
                 if (s[i].price !=-1)
                 fprintf(fp,"%d %d %f %d %s\n", s[i].price, s[i].mass, s[i].stdPrice, s[i].star, s[i].name);
         }
+	printf("저장됨!\n");
 }
 int loadData (Product*s) {
         int count = 0;

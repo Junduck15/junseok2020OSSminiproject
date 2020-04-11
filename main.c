@@ -4,6 +4,9 @@ int main(){
   Product s[100];
   int count = 0, menu;
   int curcount = 0;
+  #ifdef DEBUG
+  printf("debug[main.c] : call loadData()");
+  #endif
   count = loadData(s);
   curcount = count;
     while (1){
@@ -72,6 +75,9 @@ int main(){
                  if (count == 0)
                  printf ("데이터가 없습니다!\n");
                  else
+		#ifdef DEBUG
+		printf("debug[main.c] : call saveData()");
+		#endif
            	 saveData(s,curcount);
 		}	
 	 else if (menu == 6) {
@@ -86,12 +92,21 @@ int main(){
                 continue;
                 }
                 if (searchType==1) {
+		#ifdef DEBUG
+		printf("debug[main.c] : call searchByName()");
+		#endif
                 searchByName(s, curcount);
                 }
                 if (searchType==2) {
+		#ifdef DEBUG
+		printf("debug[main.c] : call searchByPrice()");
+		#endif
                 searchByPrice(s, curcount);
                 }
                 if (searchType==3) {
+		#ifdef DEBUG
+		printf("debug[main.c] : call searchByStar()");
+		#endif
                 searchByStar(s, curcount);
                 }
 		}

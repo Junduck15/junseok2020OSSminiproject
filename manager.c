@@ -24,6 +24,7 @@ void saveData (Product*s, int count) {
                 if (s[i].price !=-1)
                 fprintf(fp,"%d %d %f %d %s\n", s[i].price, s[i].mass, s[i].stdPrice, s[i].star, s[i].name);
         }
+	fclose(fp);
 	printf("저장됨!\n");
 }
 int loadData (Product*s) {
@@ -64,7 +65,7 @@ void searchByName (Product *s, int count) {
 void searchByPrice (Product *s, int count) {
         int scount =0;
         int search = 0;
-        printf("검색할 메뉴의 가격은?");
+        printf("검색할 메뉴의 가격은? ");
         scanf("%d", &search);
 
         for (int i =0; i<count; i++){
@@ -82,7 +83,7 @@ void searchByPrice (Product *s, int count) {
 void searchByStar (Product *s, int count) {
         int scount =0;
         int search = 0;
-        printf("검색할 메뉴의 별개수는?");
+        printf("검색할 메뉴의 별개수는? ");
         scanf("%d", &search);
 
         for (int i =0; i<count; i++){

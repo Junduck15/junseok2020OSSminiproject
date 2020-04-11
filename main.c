@@ -4,7 +4,7 @@ int main(){
   Product s[100];
   int count = 0, menu;
   int curcount = 0;
-  count = loadData[s];
+  count = loadData(s);
   curcount = count;
     while (1){
 	#ifdef DEBUG
